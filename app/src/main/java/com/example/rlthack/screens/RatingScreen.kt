@@ -22,6 +22,7 @@ import com.example.rlthack.R
 import com.example.rlthack.noAct.TableCell
 import com.example.rlthack.noAct.TableData
 import com.example.rlthack.ui.theme.BackList
+import com.example.rlthack.ui.theme.Eco
 import com.example.rlthack.ui.theme.MainBack
 import com.example.rlthack.ui.theme.MainText
 
@@ -53,7 +54,7 @@ fun RatingScreen() {
                 .padding(top = 20.dp),
             color = MainText,
             fontSize = 32.sp,
-            //fontFamily =
+            fontFamily = Eco,
         )
         LazyColumn(
             Modifier

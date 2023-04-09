@@ -14,6 +14,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.rlthack.ui.theme.BackList
+import com.example.rlthack.ui.theme.Eco
 import com.example.rlthack.ui.theme.MainText
 
 @Composable
@@ -31,5 +32,6 @@ fun RowScope.TableCell(
         color = MainText,
         fontSize = 14.sp,
         textAlign = TextAlign.Center,
+        fontFamily = Eco,
     )
 }

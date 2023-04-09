@@ -19,10 +19,7 @@ import com.example.rlthack.items.BottomNavItem
 import com.example.rlthack.screens.ContactsScreen
 import com.example.rlthack.screens.DashboardScreen
 import com.example.rlthack.screens.RatingScreen
-import com.example.rlthack.ui.theme.BottomNavColor
-import com.example.rlthack.ui.theme.BottomNavSelectedColor
-import com.example.rlthack.ui.theme.BottomNavUnselectedColor
-import com.example.rlthack.ui.theme.MainText
+import com.example.rlthack.ui.theme.*
 
 @Composable
 fun Navigation(navController: NavHostController) {
@@ -92,6 +89,7 @@ fun BottomNavigationBar(
                                 textAlign = TextAlign.Center,
                                 fontSize = 12.sp,
                                 color = MainText,
+                                fontFamily = Eco,
                             )
                         }
                     }

@@ -1,5 +1,7 @@
 package com.example.rlthack.noAct
 
+import android.content.Context
+import android.util.Log
 import android.widget.Toast
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.animateDpAsState
@@ -19,27 +21,34 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.android.volley.Request
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
 import com.example.rlthack.ui.theme.BarChartLine
 import com.example.rlthack.ui.theme.BarChart_C
+import com.example.rlthack.ui.theme.Eco
 import com.example.rlthack.ui.theme.Purple500
+import org.json.JSONException
 
 
 @Composable
 fun BarChart(
     data: Map<Float, String>,
-    max_value: Int
 ) {
+    val max_value:Int = SearchRep.map.get(12).toString().toInt()
+    Log.d("GGLog", SearchRep.map.get(12).toString().toInt().toString())
     val context = LocalContext.current
     // BarGraph Dimensions
     val barGraphHeight by remember { mutableStateOf(200.dp) }
-    val barGraphWidth by remember { mutableStateOf(20.dp) }
+    val barGraphWidth by remember { mutableStateOf(12.dp) }
     // Scale Dimensions
     val scaleYAxisWidth by remember { mutableStateOf(50.dp) }
     val scaleLineWidth by remember { mutableStateOf(2.dp) }
 
     Column(
         modifier = Modifier
-            .padding(50.dp)
+            .padding(top = 50.dp, start = 10.dp, end = 10.dp)
             .fillMaxSize(),
         verticalArrangement = Arrangement.Top
     ) {
@@ -91,9 +100,9 @@ fun BarChart(
                         .fillMaxHeight(it.key)
                         .background(BarChart_C)
                         .clickable {
-                            Toast
-                                .makeText(context, it.key.toString(), Toast.LENGTH_SHORT)
-                                .show()
+                            //Toast
+                            //    .makeText(context, it.key.toString(), Toast.LENGTH_SHORT)
+                            //    .show()
                         }
                 )
             }
@@ -118,7 +127,9 @@ fun BarChart(
                 Text(
                     modifier = Modifier.width(barGraphWidth),
                     text = it,
-                    textAlign = TextAlign.Center
+                    textAlign = TextAlign.Center,
+                    fontFamily = Eco,
+                    fontSize = 12.sp,
                 )
             }
 

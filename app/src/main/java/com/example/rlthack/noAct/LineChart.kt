@@ -94,7 +94,7 @@ fun LineChart(
             color = graphColor1,
             style = Stroke(
                 width = 2.dp.toPx(),
-                cap = StrokeCap.Round
+                cap = StrokeCap.Round,
             )
         )
         val fillPath = android.graphics.Path(strokePath.asAndroidPath()).asComposePath().apply {

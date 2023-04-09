@@ -1,5 +1,6 @@
 package com.example.rlthack.screens
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -27,6 +28,7 @@ import com.example.rlthack.R
 import com.example.rlthack.noAct.BarChart
 import com.example.rlthack.noAct.LineChart
 import com.example.rlthack.noAct.PieChart
+import com.example.rlthack.noAct.SearchRep
 import com.example.rlthack.ui.theme.*
 
 @Preview(showBackground = true)
@@ -66,12 +68,21 @@ fun DashboardScreen(
     val data3 = listOf(30f,90f,150f)
     val data4 = listOf(Pie1, Pie2, Pie3)
 
+    val max_value:Int = SearchRep.map.get(12).toString().toInt()
+    Log.d("GGLog", (max_value.toFloat()/SearchRep.map.get(1).toString().toFloat()).toString())
     val data5 =  mapOf(
-        Pair(0.1f, "1"),
-        Pair(0.3f, "2"),
-        Pair(0.5f, "3"),
-        Pair(0.7f, "4"),
-        Pair(0.9f, "5"),
+        Pair(SearchRep.map.get(1).toString().toFloat()/max_value.toFloat(), "1"),
+        Pair(SearchRep.map.get(2).toString().toFloat()/max_value.toFloat(), "2"),
+        Pair(SearchRep.map.get(3).toString().toFloat()/max_value.toFloat(), "3"),
+        Pair(SearchRep.map.get(4).toString().toFloat()/max_value.toFloat(), "4"),
+        Pair(SearchRep.map.get(5).toString().toFloat()/max_value.toFloat(), "5"),
+        Pair(SearchRep.map.get(6).toString().toFloat()/max_value.toFloat(), "6"),
+        Pair(SearchRep.map.get(7).toString().toFloat()/max_value.toFloat(), "7"),
+        Pair(SearchRep.map.get(8).toString().toFloat()/max_value.toFloat(), "8"),
+        Pair(SearchRep.map.get(9).toString().toFloat()/max_value.toFloat(), "9"),
+        Pair(SearchRep.map.get(10).toString().toFloat()/max_value.toFloat(), "10"),
+        Pair(SearchRep.map.get(11).toString().toFloat()/max_value.toFloat(), "11"),
+        Pair(SearchRep.map.get(12).toString().toFloat()/max_value.toFloat(), "12"),
     )
 
     Column(
@@ -88,7 +99,7 @@ fun DashboardScreen(
                 .padding(top = 20.dp),
             color = MainText,
             fontSize = 32.sp,
-            //fontFamily =
+            fontFamily = Eco,
         )
         LineChart(
             data1 = data1,
@@ -130,16 +141,19 @@ fun DashboardScreen(
                     text = "Сиреневая долька",
                     color = Pie1,
                     fontSize = 14.sp,
+                    fontFamily = Eco,
                 )
                 Text(
                     text = "Розовая долька",
                     color = Pie2,
                     fontSize = 14.sp,
+                    fontFamily = Eco,
                 )
                 Text(
                     text = "Голубая долька",
                     color = Pie3,
                     fontSize = 14.sp,
+                    fontFamily = Eco,
                 )
             }
 
@@ -148,65 +162,65 @@ fun DashboardScreen(
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 Text(
-                    text = "1420",
+                    text = "692",
                     modifier = Modifier,
                     color = MainText,
                     fontSize = 32.sp,
-                    //fontFamily =
+                    fontFamily = Eco,
                 )
                 Text(
-                    text = "чего-то",
+                    text = "Поставка продуктов питания",
                     modifier = Modifier,
                     color = MainText,
                     fontSize = 14.sp,
-                    //fontFamily =
+                    fontFamily = Eco,
                 )
                 Text(
-                    text = "5680",
+                    text = "501",
                     modifier = Modifier,
                     color = MainText,
                     fontSize = 32.sp,
-                    //fontFamily =
+                    fontFamily = Eco,
                 )
                 Text(
-                    text = "ещё чего-то",
+                    text = "Поставка электрической энергии",
                     modifier = Modifier,
                     color = MainText,
                     fontSize = 14.sp,
-                    //fontFamily =
+                    fontFamily = Eco,
                 )
                 Text(
-                    text = "0.0% ",
+                    text = "452",
                     modifier = Modifier,
                     color = MainText,
                     fontSize = 32.sp,
-                    //fontFamily =
+                    fontFamily = Eco,
                 )
                 Text(
-                    text = "очень много",
+                    text = "Поставка тепловой энергии",
                     modifier = Modifier,
                     color = MainText,
                     fontSize = 14.sp,
-                    //fontFamily =
+                    fontFamily = Eco,
                 )
                 Text(
-                    text = "100.0% ",
+                    text = "365",
                     modifier = Modifier.padding(top = 25.dp),
                     color = MainText,
                     fontSize = 32.sp,
-                    //fontFamily =
+                    fontFamily = Eco,
                 )
                 Text(
-                    text = "очень мало",
+                    text = "Поставка лекарственных препаратов",
                     modifier = Modifier,
                     color = MainText,
                     fontSize = 14.sp,
-                    //fontFamily =
+                    fontFamily = Eco,
                 )
             }
             
         }
-        BarChart(data = data5, max_value = 1000)
+        BarChart(data = data5)
         Spacer(modifier = Modifier.padding(top = 100.dp))
     }
 }
@@ -232,7 +246,8 @@ fun ListItem(name:String){
                 textAlign = TextAlign.Start,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(start = 11.dp)
+                    .padding(start = 11.dp),
+                fontFamily = Eco,
             )
         }
     }

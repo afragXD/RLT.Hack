@@ -4,12 +4,14 @@ import android.annotation.SuppressLint
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
 import com.example.rlthack.R
 import com.example.rlthack.items.BottomNavItem
 import com.example.rlthack.noAct.BottomNavigationBar
+import com.example.rlthack.noAct.GetAll
 import com.example.rlthack.noAct.Navigation
 
 @Preview(showBackground = true)
@@ -17,6 +19,8 @@ import com.example.rlthack.noAct.Navigation
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 fun MainScreen() {
     val navController = rememberNavController()
+    val context = LocalContext.current
+    GetAll(context)
     Scaffold(
         bottomBar = {
             BottomNavigationBar(
