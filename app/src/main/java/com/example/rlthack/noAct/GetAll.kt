@@ -34,6 +34,9 @@ fun GetAll(context: Context) {
                 }
                 SearchRep.map = map
                 Log.d("GGLog", SearchRep.map.toString())
+
+                val max_value:Int = SearchRep.map.get(12).toString().toInt()
+                Log.d("GGLog",max_value.toString())
             }catch (error: JSONException){
                 Log.d("GGLog", "error: $error")
             }

@@ -31,9 +31,18 @@ import com.example.rlthack.ui.theme.MainText
 fun RatingScreen() {
 
     val data = listOf(
-        TableData(1,"ss1", 3123, "47,98%"),
-        TableData(2,"ss2", 3123, "12,64%"),
-        TableData(3,"ss3", 3123, "47,98%"),
+        TableData(0,"101003907.0", "494000.01", "0.1398891759239783"),
+        TableData(1,"101006993.0", "3123", "0.00992319272906334"),
+        TableData(2,"", "", "0.08015211462810955"),
+        TableData(3,"", "", "0.1219157438034312"),
+        TableData(4,"", "", "0.2905236549169197"),
+        TableData(5,"", "", "0.07876285685088966"),
+        TableData(6,"", "", "0.10943507546016"),
+        TableData(7,"", "", "0.09337519208719582"),
+        TableData(8,"", "", "0.01584367919129924"),
+        TableData(9,"", "", "0.08962655232169518"),
+        TableData(10,"", "", "0.3185938234082486"),
+        TableData(11,"", "", "0.03826079221562335"),
     )
 
     val column1Weight = .1f
@@ -63,9 +72,9 @@ fun RatingScreen() {
             item {
                 Row(Modifier.background(BackList)) {
                     TableCell(text = "№", weight = column1Weight)
-                    TableCell(text = "Описание", weight = column2Weight)
-                    TableCell(text = "Цифры", weight = column3Weight)
-                    TableCell(text = "Цифры", weight = column4Weight)
+                    TableCell(text = "supplier_inn", weight = column2Weight)
+                    TableCell(text = "contract_price_rub", weight = column3Weight)
+                    TableCell(text = "rank,y_proba", weight = column4Weight)
                 }
             }
             items(items = data){item ->
@@ -77,6 +86,6 @@ fun RatingScreen() {
                 }
             }
         }
-        Spacer(modifier = Modifier.padding(top = 100.dp))
+        Spacer(modifier = Modifier.padding(top = 200.dp))
     }
 }

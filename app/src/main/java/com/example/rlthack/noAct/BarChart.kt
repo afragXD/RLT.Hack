@@ -41,9 +41,9 @@ fun BarChart(
     val context = LocalContext.current
     // BarGraph Dimensions
     val barGraphHeight by remember { mutableStateOf(200.dp) }
-    val barGraphWidth by remember { mutableStateOf(12.dp) }
+    val barGraphWidth by remember { mutableStateOf(10.dp) }
     // Scale Dimensions
-    val scaleYAxisWidth by remember { mutableStateOf(50.dp) }
+    val scaleYAxisWidth by remember { mutableStateOf(40.dp) }
     val scaleLineWidth by remember { mutableStateOf(2.dp) }
 
     Column(
@@ -129,7 +129,7 @@ fun BarChart(
                     text = it,
                     textAlign = TextAlign.Center,
                     fontFamily = Eco,
-                    fontSize = 12.sp,
+                    fontSize = 10.sp,
                 )
             }
 

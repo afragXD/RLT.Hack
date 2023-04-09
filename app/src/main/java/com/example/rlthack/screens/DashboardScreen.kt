@@ -34,18 +34,6 @@ import com.example.rlthack.ui.theme.*
 @Preview(showBackground = true)
 @Composable
 fun DashboardScreen(
-    //text1:String,
-    //text2:String,
-    //text3:String,
-    //text4:String,
-    //text5:String,
-    //pie1:String,
-    //pie2:String,
-    //pie3:String,
-    //num1:String,
-    //num2:String,
-    //num3:String,
-    //num4:String,
 ) {
 
     val data1 = listOf(
@@ -85,6 +73,8 @@ fun DashboardScreen(
         Pair(SearchRep.map.get(12).toString().toFloat()/max_value.toFloat(), "12"),
     )
 
+    val mmap = SearchRep.map.toList().sortedBy { (_, value) -> value }.toMap()
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -110,14 +100,14 @@ fun DashboardScreen(
                 .align(Alignment.CenterHorizontally)
                 .padding(top = 40.dp, start = 30.dp, end = 17.dp)
         )
-        val names = listOf(
-            "Первый номер в списке",
-            "Второй номер в списке",
-            "Третий номер в списке",
-            "Четвертый номер в списке",
-            "Пятый номер в списке"
-        )
-        RecyclerView(names)
+        //val names = listOf(
+        //    "1 " + SearchRep.map.get(12).toString().toInt().toString(),
+        //    "2 "+ SearchRep.map.get(12).toString().toInt().toString(),
+        //    "3 "+ SearchRep.map.get(12).toString().toInt().toString(),
+        //    "4 "+ SearchRep.map.get(12).toString().toInt().toString(),
+        //    "5 "+ SearchRep.map.get(12).toString().toInt().toString()
+        //)
+        //RecyclerView(names)
         Row(
             horizontalArrangement = Arrangement.SpaceBetween,
             modifier = Modifier
