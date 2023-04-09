@@ -52,5 +52,21 @@ fun PieChart(
             useCenter = true,
             size = Size(size.width,size.width)
         )
+        startAngle+=percentAngle[2]
+        drawArc(
+            color = data2[3],
+            startAngle = startAngle,
+            sweepAngle = percentAngle[3],
+            useCenter = true,
+            size = Size(size.width,size.width)
+        )
+        startAngle+=percentAngle[3]
+        drawArc(
+            color = data2[4],
+            startAngle = startAngle,
+            sweepAngle = percentAngle[4],
+            useCenter = true,
+            size = Size(size.width,size.width)
+        )
     }
 }

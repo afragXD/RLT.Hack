@@ -16,6 +16,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.buildAnnotatedString
@@ -25,16 +26,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.rlthack.R
-import com.example.rlthack.noAct.BarChart
-import com.example.rlthack.noAct.LineChart
-import com.example.rlthack.noAct.PieChart
-import com.example.rlthack.noAct.SearchRep
+import com.example.rlthack.noAct.*
 import com.example.rlthack.ui.theme.*
 
 @Preview(showBackground = true)
 @Composable
 fun DashboardScreen(
 ) {
+
+    val context = LocalContext.current
+    GetAll(context)
 
     val data1 = listOf(
         Pair(0, 0.0),
@@ -53,11 +54,13 @@ fun DashboardScreen(
         Pair(5, 2.0),
     )
 
-    val data3 = listOf(30f,90f,150f)
-    val data4 = listOf(Pie1, Pie2, Pie3)
+
+    val data3 = listOf(692f,501f,452f,365f, 334f)
+    val data4 = listOf(Pie1, Pie2, Pie3, Color.White, Color.Green)
 
     val max_value:Int = SearchRep.map.get(12).toString().toInt()
-    Log.d("GGLog", (max_value.toFloat()/SearchRep.map.get(1).toString().toFloat()).toString())
+    //Log.d("GGLog", SearchRep.map.toString())
+    //Log.d("GGLog", SearchRep.map.get(12).toString().toInt().toString())
     val data5 =  mapOf(
         Pair(SearchRep.map.get(1).toString().toFloat()/max_value.toFloat(), "1"),
         Pair(SearchRep.map.get(2).toString().toFloat()/max_value.toFloat(), "2"),
@@ -100,14 +103,13 @@ fun DashboardScreen(
                 .align(Alignment.CenterHorizontally)
                 .padding(top = 40.dp, start = 30.dp, end = 17.dp)
         )
-        //val names = listOf(
-        //    "1 " + SearchRep.map.get(12).toString().toInt().toString(),
-        //    "2 "+ SearchRep.map.get(12).toString().toInt().toString(),
-        //    "3 "+ SearchRep.map.get(12).toString().toInt().toString(),
-        //    "4 "+ SearchRep.map.get(12).toString().toInt().toString(),
-        //    "5 "+ SearchRep.map.get(12).toString().toInt().toString()
-        //)
-        //RecyclerView(names)
+        val names = listOf(
+            "Количество обработанных операций 1592293",
+            "Количество классов ранжирования 5",
+            "Средний процент заполненности данных: 67%",
+            "Максимальное количество успешных операций: 5072",
+        )
+        RecyclerView(names)
         Row(
             horizontalArrangement = Arrangement.SpaceBetween,
             modifier = Modifier
@@ -127,24 +129,24 @@ fun DashboardScreen(
                         .padding(top = 20.dp)
                 )
                 Spacer(modifier = Modifier.padding(top = 200.dp))
-                Text(
-                    text = "Сиреневая долька",
-                    color = Pie1,
-                    fontSize = 14.sp,
-                    fontFamily = Eco,
-                )
-                Text(
-                    text = "Розовая долька",
-                    color = Pie2,
-                    fontSize = 14.sp,
-                    fontFamily = Eco,
-                )
-                Text(
-                    text = "Голубая долька",
-                    color = Pie3,
-                    fontSize = 14.sp,
-                    fontFamily = Eco,
-                )
+                //Text(
+                //    text = "Сиреневая долька",
+                //    color = Pie1,
+                //    fontSize = 14.sp,
+                //    fontFamily = Eco,
+                //)
+                //Text(
+                //    text = "Розовая долька",
+                //    color = Pie2,
+                //    fontSize = 14.sp,
+                //    fontFamily = Eco,
+                //)
+                //Text(
+                //    text = "Голубая долька",
+                //    color = Pie3,
+                //    fontSize = 14.sp,
+                //    fontFamily = Eco,
+                //)
             }
 
             Column(

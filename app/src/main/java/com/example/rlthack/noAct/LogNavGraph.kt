@@ -25,7 +25,7 @@ import com.example.rlthack.ui.theme.*
 fun Navigation(navController: NavHostController) {
     NavHost(
         navController = navController,
-        startDestination = "dashboard"
+        startDestination = "rating"
     ){
         composable("dashboard"){
             DashboardScreen()
